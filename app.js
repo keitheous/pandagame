@@ -73,14 +73,12 @@ $(document).ready(function(){
     var winCheck = function(){
       var positionPlayer = $('#player').position();
       var positionGorilla = $('#gorilla').position();
-      console.log(yDistance+","+xDistance)
-      if ((yDistance == 5)&&(xDistance == 5)){
+      // console.log(yDistance+","+xDistance)
+      hypotenuse= Math.sqrt ((Math.pow(yDistance, 2))+(Math.pow(xDistance, 2)));
+      hypotenuse= Math.floor(hypotenuse);
+      // console.log(hypotenuse);
+      if (hypotenuse <= 8){
         Lost();
-      } else if ((yDistance == -5)&&(xDistance == -5)){
-        Lost();
-      }
-      else {
-
       }
     }
 
@@ -108,7 +106,7 @@ $(document).ready(function(){
         $('#announcement').html("");
       }, 15000);
       _.delay(function(){
-        $('#announcement').html("Keep Running! Clue 2: the difference between you and i");
+        $('#announcement').html("Keep Running! Clue 2: this isnt mine");
       }, 25000);
       _.delay(function(){
         $('#announcement').html("");
