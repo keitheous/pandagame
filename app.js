@@ -4,27 +4,29 @@ $(document).ready(function(){
     var turn = 0;
     var game = true;
     var player = '<div id="player"><img id="you" src="panda1.png"/></div>';
-    var gorilla = '<div id="gorilla"><img src="panda3.png"/></div>';
+    var gorilla = '<div id="gorilla"><img id="enemy" src="panda3.png"/></div>';
     var ribbon = '<img id="ribbon" src="ribbon.png">';
     var openedRibbon = '<img id="open-ribbon" src="opened_ribbon.png">';
-    var origin = 250;
+    var origin = 225;
 
     var moveVertically = function(destination) {
       var positionGorilla = $('#gorilla').position();
 
       yDistance = parseInt(destination)- parseInt(positionGorilla.top);
+      // console.log(yDistance);
       if (yDistance < 0){
         $('#gorilla').css('top', positionGorilla.top - 10 + "px");
       }
       else {
         $('#gorilla').css('top', positionGorilla.top + 10 + "px");
       }
-    }
 
+    }
     var moveHorizontally = function(destination) {
       var positionGorilla = $('#gorilla').position();
 
       xDistance = parseInt(destination)- parseInt(positionGorilla.left);
+      // console.log(xDistance);
       if (xDistance < 0){
         $('#gorilla').css('left', positionGorilla.left - 10 + "px");
       }
@@ -71,7 +73,10 @@ $(document).ready(function(){
     var winCheck = function(){
       var positionPlayer = $('#player').position();
       var positionGorilla = $('#gorilla').position();
-      if ((positionPlayer.top == positionGorilla.top)&&(positionPlayer.left == positionGorilla.left)){
+      // console.log(yDistance+","+xDistance)
+      if ((yDistance == 5)&&(xDistance == 6)){
+        Lost();
+      } else if ((yDistance == -5)&&(xDistance == -4)){
         Lost();
       }
       else {
@@ -140,6 +145,10 @@ $(document).ready(function(){
     $(document).keydown(function(e){
       var positionPlayer = $('#player').position();
       var positionGorilla = $('#gorilla').position();
+      xPlayer= Math.floor(positionPlayer.left);
+      yPlayer = Math.floor(positionPlayer.top);
+      // console.log("Player:"+xPlayer+","+yPlayer);
+
 
       if (!game){
         e.preventDefault
@@ -147,55 +156,59 @@ $(document).ready(function(){
       else{
         switch (e.keyCode) {
           case 37:  // move Left - origin - origin is out of bound
-            if (positionPlayer.left <= origin-origin){
+            if (xPlayer <= origin-origin){
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
             }
             else {
-              $('#player').css('left', positionPlayer.left - 10 + "px"); //player effectively move left
+              $('#player').css('left', xPlayer - 10 + "px"); //player effectively move left
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
+              // console.log("Player:"+xPlayer+","+yPlayer);
             }
 
           case 38:  // Move Up - origin - origin is out of bound
-            if (positionPlayer.top <= origin-origin){
+            if (yPlayer <= origin-origin){
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
             }
             else {
-              $('#player').css('top', positionPlayer.top - 10 + "px"); //player effectively move up
+              $('#player').css('top', yPlayer - 10 + "px"); //player effectively move up
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
+              // console.log("Player:"+xPlayer+","+yPlayer);
             }
 
           case 39:  // move right - origin * 2 is out of bound
-            if (positionPlayer.left >= (2*origin)){
+            if (xPlayer >= (2*origin)){
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
             }
             else {
-              $('#player').css('left', positionPlayer.left + 10 + "px"); //player effectively move right
+              $('#player').css('left', xPlayer+ 10 + "px"); //player effectively move right
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
+              // console.log("Player:"+xPlayer+","+yPlayer);
             }
 
           case 40:  // move Down - origin * 2 is out of bound
-            if (positionPlayer.top >= (2*origin)){
+            if (yPlayer >= (2*origin)){
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
             }
             else {
-              $('#player').css('top', positionPlayer.top + 10 + "px"); //player effectively move down
+              $('#player').css('top', yPlayer + 10 + "px"); //player effectively move down
               turn ++;
-              gorillaMoves(positionPlayer.top, positionPlayer.left);
+              gorillaMoves(yPlayer, xPlayer);
               break;
+              // console.log("Player:"+xPlayer+","+yPlayer);
             }
           }
       }
