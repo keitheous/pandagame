@@ -74,9 +74,9 @@ $(document).ready(function(){
       var positionPlayer = $('#player').position();
       var positionGorilla = $('#gorilla').position();
       console.log(yDistance+","+xDistance)
-      if ((yDistance == 5)&&(xDistance == 6)){
+      if ((yDistance == 5)&&(xDistance == 5)){
         Lost();
-      } else if ((yDistance == -5)&&(xDistance == -4)){
+      } else if ((yDistance == -5)&&(xDistance == -5)){
         Lost();
       }
       else {
