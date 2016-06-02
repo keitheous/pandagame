@@ -73,7 +73,7 @@ $(document).ready(function(){
     var winCheck = function(){
       var positionPlayer = $('#player').position();
       var positionGorilla = $('#gorilla').position();
-      // console.log(yDistance+","+xDistance)
+      console.log(yDistance+","+xDistance)
       if ((yDistance == 5)&&(xDistance == 6)){
         Lost();
       } else if ((yDistance == -5)&&(xDistance == -4)){
