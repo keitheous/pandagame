@@ -1,0 +1,79 @@
+body{
+  text-align: center;
+  background-image: url("https://images5.alphacoders.com/380/380354.jpg");
+  background-color: #cccccc;
+}
+#warning {
+  color:red;
+  font-size: 40px;
+}
+.storyboard{
+  color: white;
+  font-size: 80px;
+}
+.content{
+  border-style: solid;
+  border-width: 5px;
+  opacity: 0.5;
+  background-color: black;
+}
+
+.gameboard{
+  display: none;
+}
+
+#restartBtn, #gameBtn{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  background-color: #555555;
+  color: white;
+}
+
+#announcement{
+  font-size: 60px;
+  color: white;
+}
+#ribbon {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  height: 30px;
+}
+#open-ribbon{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
+#arena {
+  background-color: white;
+  margin: auto;
+  position: relative;
+  border: 5px solid black;
+  height: 600px;
+  width: 580px;
+}
+#player {
+  position: absolute;
+
+  /*border: 3px double gray;*/
+}
+#player > #you {
+  height:100px;
+  width:80px;
+  z-index: 1;
+  -webkit-user-select: none;
+
+}
+
+#gorilla {
+  position: absolute;
+  /*border: 3px double gray;*/
+}
+
+#gorilla > img {
+  height:100px;
+  height:100px;
+  z-index: -10;
+  -webkit-user-select: none;
+}
