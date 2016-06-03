@@ -85,6 +85,34 @@ $(document).ready(function(){
     $('#arena').append(player);
     $('#player').css({ "left": origin + "px", "top": origin + "px" })
     $('#player').append(ribbon);
+    _.delay(function(){
+      $('#announcement').html("Clue 1: mouse at the speed of light!");
+    }, 7000);
+    _.delay(function(){
+      $('#announcement').html("");
+    }, 12000);
+    _.delay(function(){
+      $('#announcement').html("Clue 2: I am NOT A GIRL. Get this 'THING' OFF me");
+    }, 18000);
+    _.delay(function(){
+      $('#announcement').html("");
+    }, 23000);
+    _.delay(function(){
+      $('#announcement').html("Clue 3: Catch the Mouse Red Handed!!");
+    }, 30000);
+    _.delay(function(){
+      $('#announcement').html("");
+    }, 35000);
+    _.delay(function(){
+      $('#announcement').html("Last Clue: Pork Ribbs on Mash Potatoes");
+    }, 45000);
+    _.delay(function(){
+      $('#announcement').html("");
+    }, 50000);
+    _.delay(function(){
+      $('#announcement').html("One minute's up. Cramps!");
+      Lost();
+    }, 60000);
 
     _.delay(gorillaEnters, 2000);
     setInterval(function(){
@@ -93,37 +121,6 @@ $(document).ready(function(){
       moveVertically(positionPlayer.top);
       winCheck();
     }, 500);
-
-    if(!game){
-      $('#announcement').html("");
-    }
-    else
-    {
-      _.delay(function(){
-        $('#announcement').html("Here's Clue 1: user input at the speed of light!");
-      }, 10000);
-      _.delay(function(){
-        $('#announcement').html("");
-      }, 15000);
-      _.delay(function(){
-        $('#announcement').html("Keep Running! Clue 2: this isnt mine");
-      }, 25000);
-      _.delay(function(){
-        $('#announcement').html("");
-      }, 30000);
-      _.delay(function(){
-        $('#announcement').html("OMG! Clue 3: I AM NOT A GIRL!");
-      }, 40000);
-      _.delay(function(){
-        $('#announcement').html("");
-      }, 45000);
-      _.delay(function(){
-        $('#announcement').html("Last one or you're dead. Final Clue: The thing that makes me a girl");
-      }, 60000);
-      _.delay(function(){
-        $('#announcement').html("");
-      }, 80000);
-    }
 
     $('#ribbon').draggable()
     $('#ribbon').mouseup(function(e) {
