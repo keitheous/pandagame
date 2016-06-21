@@ -1,5 +1,3 @@
-# pandagame
-
 Run Panda Run!
 ==============
 
