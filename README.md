@@ -22,6 +22,7 @@ var positionGorilla = $('#gorilla').position();
 yDistance = parseInt(destination)- parseInt(positionGorilla.top);
     
 if (yDistance < 0){ $('#gorilla').css('top', positionGorilla.top - 10 + "px");}
+
 else { $('#gorilla').css('top', positionGorilla.top + 10 + "px"); }
         
 The co ordinates of both pandas are determined (x1,y1) & (x2,y2). The position of the Male Panda (in heat) is moved using a mathematical formula. If the difference is a negative or positive value, the panda would move towards the other by closing in the difference (to 0) using CSS attributes. When it goes too close to the player, an event then triggers for Game Over. The distance between player and the Male Panda are determined using the Pythagoras Theorem. 
