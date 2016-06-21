@@ -1,7 +1,6 @@
 body{
   text-align: center;
-  background-image: url("https://images5.alphacoders.com/380/380354.jpg");
-  background-color: #cccccc;
+  background-color: white;
 }
 #warning {
   color:red;
@@ -17,6 +16,7 @@ body{
   border-width: 5px;
   opacity: 0.8;
   background-color: black;
+  border-radius: 30px;
 }
 
 .gameboard{
@@ -29,6 +29,7 @@ body{
   font-size: 30px;
   background-color: #555555;
   color: white;
+  border-radius: 20px;
 }
 
 #announcement{

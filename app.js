@@ -98,13 +98,13 @@ $(document).ready(function(){
       $('#announcement').html("");
     }, 23000);
     _.delay(function(){
-      $('#announcement').html("Clue 3: Catch the Mouse Red Handed!!");
+      $('#announcement').html("Clue 3: Arrow the Bow!!");
     }, 30000);
     _.delay(function(){
       $('#announcement').html("");
     }, 35000);
     _.delay(function(){
-      $('#announcement').html("Last Clue: Pork Ribbs on Mash Potatoes");
+      $('#announcement').html("Last Clue: RIBBS on Panda Meat..");
     }, 45000);
     _.delay(function(){
       $('#announcement').html("");
